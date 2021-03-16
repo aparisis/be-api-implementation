@@ -1,29 +1,17 @@
-# README #
+# Programming Challenge: API Development #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Assignment ##
 
-### What is this repository for? ###
+## Guidelines ##
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Contact ##
 
-### How do I get set up? ###
+For general questions, send an email at vaggalanis@jokersattractions.com
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+For more immediate feedback, contact us at Skype profile `live:vaggalanis`
 
-### Contribution guidelines ###
+## Submission ##
 
-* Writing tests
-* Code review
-* Other guidelines
+Feel free to place this test on your Github/Gitlab/Bitbucket/... account as a public repository and send us the link.
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+We are looking forward to hearing from you. Good luck!
