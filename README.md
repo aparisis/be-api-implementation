@@ -1,13 +1,11 @@
 # Programming Challenge: API Development #
 
----
-
 ## Objective ##
 
 Implement the code that will generate the responses sent as reply to a set of HTTP requests. Communication will be based
 on a RESTful API specification.
 
-### Key features: ###
+### Key features ###
 
 - Organize your code being caution about re-usability and readability principles.
 - Consider changes in given code or database schema to promote scalability and improve performance.
@@ -22,27 +20,129 @@ browser) sends to the web service on the server.
 You will be provided with the description of request, however, you should generate response's body (e.g data) send back
 to client. Sample data structure of response will also be given.
 
-* Data is sent and received in a JSON format.
-* The sample request is formatted in cURL.
+- Data is sent and received in a JSON format.
+- The sample request is formatted in cURL.
 
-### Task 1: ###
+### Task 1 ###
 
-Get the list of top N (<=3) users that have won the largest winning amount in total from the game.  
+Get the info of a specific ticket.  
+The info should include the id of the ticket, its winning amount, the date of its creation and a json array containing the bets associated with it. Each bet info should include the bet id, the bet amount and the name of the bet type.
+
+The sample request:  
+`curl -X GET 'http://YOUR.SERVER.HERE/ticket/{id}' -H 'Content-Type: application/json'`
+
+Sample response data:
+
+```json
+{
+  "data":{
+    "ticket": {
+      "id": 10,
+      "winning_amount": 100,
+      "created_at": "2020-10-14 10:31:13",
+      "bets": [
+        {
+          "id": 14,
+          "amount": 1.5,
+          "type": "straight" 
+        },
+        {
+          "id": 15,
+          "amount": 2,
+          "type": "split" 
+        }
+      ]
+    }
+  }
+}
+```
+
+### Task 2 ###
+
+Create a new ticket. You should provide an array of bets with each bet containing its amount and its type.  
+The server will respond with the newly created ticket info.
+
+The sample request:  
+`curl -X POST 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"data": {"bets": [{"amount": 1.5,"type": "straight"}{"amount": 2,"type": "split"}]}}'`
+
+Sample response data:
+
+```json
+{
+  "data":{
+    "ticket": {
+      "id": 10,
+      "winning_amount": 0,
+      "created_at": "2020-10-14 10:31:13",
+      "bets": [
+        {
+          "id": 14,
+          "amount": 1.5,
+          "type": "straight" 
+        },
+        {
+          "id": 15,
+          "amount": 2,
+          "type": "split" 
+        }
+      ]
+    }
+  }
+}
+```
+
+### Task 3 ###
+
+Update the user username or password.  
+The server will respond with the updated user info.
+
+The sample request:  
+`curl -X PATCH 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"data": {"user": {"username":"testuser", "password":"xGfdsek20g"}}}'`
+
+Sample response data:
+
+```json
+{
+  "data":{
+    "user": {
+      "id": 10,
+      "username": "testuser",
+      "created_at": "2020-10-14 10:31:13"
+    }
+  }
+}
+```
+
+### Task 4 ###
+
+Get the list of the top N (<=3) users that have won the largest winning amount in total from the game.  
 The list should include the username of users, userId and the total winning amount for each one, sorted in descending
 order by total winning amount.  
 If more than one user has the same total winning amount, they should be ordered alphabetically based on their username.
 
 The sample request:  
-`curl -X GET 'http://YOUR.SERVER.HERE/top/{num_of_top_users}' -H 'Content-Type: application/x-www-form-urlencoded'`
+`curl -X GET 'http://YOUR.SERVER.HERE/top/{num_of_top_users}' -H 'Content-Type: application/json'`
 
 Sample response data:
-`{"data":{"top":[{
-"id":10,
-"total_winning_amount": 250,
-"username": "zafko"}, {
-"id":7,
-"total_winning_amount": 120,
-"username": "npmint"}, ...]}}`
+
+```json
+{
+  "data":{
+    "top":[
+      {
+        "id":10,
+        "total_winning_amount": 250,
+        "username": "zafko"
+      }, {
+        "id":7,
+        "total_winning_amount": 120,
+        "username": "npmint"
+      },
+      ...
+    ]
+  }
+}
+```
 
 ## Guidelines ##
 The above mentioned services have to be written in PHP ^7.2, and it is advisable to use the Symfony framework, but you can use none if it is your choice.  
