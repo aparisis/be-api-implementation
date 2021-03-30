@@ -145,30 +145,36 @@ Sample response data:
 ```
 
 ## Guidelines ##
+
 The above mentioned services have to be written in PHP ^7.2, and it is advisable to use the Symfony framework, but you can use none if it is your choice.  
 
 ### Technical Requirements ###
 
 1. Install PHP 7.2.5 or higher and these PHP extensions (which are installed and enabled by default in most PHP 7 installations): Ctype, iconv, JSON, PCRE, Session, SimpleXML, and Tokenizer.
 2. Install Composer, which is used to install PHP packages.
-3. Set up a web development environment with Apache2, MySQL server and PHP. 
+3. Set up a web development environment with Apache2, MySQL server and PHP.
     - It is recommended to use a suite like WAMP for Windows or XAMPP as Linux alternative.
         > If you decide a different deployment setup (e.g. container/vm), please put the setup guidelines in the README of your repository.
 
 ### Installation instructions ###
 
 - Clone the current repository and re-initialize it as your own. Make the first commit without applying any changes to the code and then start your implementation.
-  ```
+
+  ```bash
   git init . 
   git add .
   git commit -m "{your initial commit message}"
   ```
+
 - Install dependencies of project with Composer.
-  ```
+
+  ```bash
   composer install
   ```
+
 - Add a new virtual host in the main Apache configuration file.
-  ````
+
+  ```conf
   <VirtualHost *:80>
     ServerName {SERVER_NAME}
     DocumentRoot "{APACHE_WEB_ROOT_DIR}/be-api-implementation/public/"
@@ -187,16 +193,20 @@ The above mentioned services have to be written in PHP ^7.2, and it is advisable
         Require local
     </Directory>
   </VirtualHost>
-  ````
-  **Note:**    
+  ```
+
+  **Note:**
+
   1. Replace {SERVER_NAME} placeholder with your server's domain name (e.g localhost or a name of your choice).   
   2. Replace {APACHE_WEB_ROOT_DIR} with the Apache document root directory.
-    
+
 ### Quick start with Symfony framework ###
+
 - https://symfony.com/doc/current/routing.html#creating-routes-as-attributes-or-annotations
 - https://symfony.com/doc/current/routing.html#route-parameters
 - https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data
 - https://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response
+
 ## Contact ##
 
 For general questions, send an email at vaggalanis@jokersattractions.com
