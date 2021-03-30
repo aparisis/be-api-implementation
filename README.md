@@ -35,24 +35,22 @@ Sample response data:
 
 ```json
 {
-  "data":{
-    "ticket": {
-      "id": 10,
-      "winning_amount": 100,
-      "created_at": "2020-10-14 10:31:13",
-      "bets": [
-        {
-          "id": 14,
-          "amount": 1.5,
-          "type": "straight" 
-        },
-        {
-          "id": 15,
-          "amount": 2,
-          "type": "split" 
-        }
-      ]
-    }
+  "ticket": {
+    "id": 10,
+    "winning_amount": 100,
+    "created_at": "2020-10-14 10:31:13",
+    "bets": [
+      {
+        "id": 14,
+        "amount": 1.5,
+        "type": "straight" 
+      },
+      {
+        "id": 15,
+        "amount": 2,
+        "type": "split" 
+      }
+    ]
   }
 }
 ```
@@ -63,30 +61,28 @@ Create a new ticket. You should provide an array of bets with each bet containin
 The server will respond with the newly created ticket info.
 
 The sample request:  
-`curl -X POST 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"data": {"bets": [{"amount": 1.5,"type": "straight"}, {"amount": 2,"type": "split"}]}}'`
+`curl -X POST 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"bets": [{"amount": 1.5,"type": "straight"}, {"amount": 2,"type": "split"}]}'`
 
 Sample response data:
 
 ```json
 {
-  "data":{
-    "ticket": {
-      "id": 10,
-      "winning_amount": 0,
-      "created_at": "2020-10-14 10:31:13",
-      "bets": [
-        {
-          "id": 14,
-          "amount": 1.5,
-          "type": "straight" 
-        },
-        {
-          "id": 15,
-          "amount": 2,
-          "type": "split" 
-        }
-      ]
-    }
+  "ticket": {
+    "id": 10,
+    "winning_amount": 0,
+    "created_at": "2020-10-14 10:31:13",
+    "bets": [
+      {
+        "id": 14,
+        "amount": 1.5,
+        "type": "straight" 
+      },
+      {
+        "id": 15,
+        "amount": 2,
+        "type": "split" 
+      }
+    ]
   }
 }
 ```
@@ -97,18 +93,16 @@ Update the user username or password.
 The server will respond with the updated user info.
 
 The sample request:  
-`curl -X PATCH 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"data": {"user": {"username":"testuser", "password":"xGfdsek20g"}}}'`
+`curl -X PATCH 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"user": {"username":"testuser", "password":"xGfdsek20g"}}'`
 
 Sample response data:
 
 ```json
 {
-  "data":{
-    "user": {
-      "id": 10,
-      "username": "testuser",
-      "created_at": "2020-10-14 10:31:13"
-    }
+  "user": {
+    "id": 10,
+    "username": "testuser",
+    "created_at": "2020-10-14 10:31:13"
   }
 }
 ```
@@ -127,19 +121,17 @@ Sample response data:
 
 ```json
 {
-  "data":{
-    "top":[
-      {
-        "id":10,
-        "total_winning_amount": 250,
-        "username": "zafko"
-      }, {
-        "id":7,
-        "total_winning_amount": 120,
-        "username": "npmint"
-      }
-    ]
-  }
+  "top":[
+    {
+      "id":10,
+      "total_winning_amount": 250,
+      "username": "zafko"
+    }, {
+      "id":7,
+      "total_winning_amount": 120,
+      "username": "npmint"
+    }
+  ]
 }
 ```
 
