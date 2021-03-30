@@ -29,7 +29,7 @@ Get the info of a specific ticket.
 The info should include the id of the ticket, its winning amount, the date of its creation and a json array containing the bets associated with it. Each bet info should include the bet id, the bet amount and the name of the bet type.
 
 The sample request:  
-`curl -X GET 'http://YOUR.SERVER.HERE/ticket/{id}' -H 'Content-Type: application/json'`
+`curl -X GET 'http://YOUR.SERVER.HERE/ticket/10' -H 'Content-Type: application/json'`
 
 Sample response data:
 
@@ -63,7 +63,7 @@ Create a new ticket. You should provide an array of bets with each bet containin
 The server will respond with the newly created ticket info.
 
 The sample request:  
-`curl -X POST 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"data": {"bets": [{"amount": 1.5,"type": "straight"}{"amount": 2,"type": "split"}]}}'`
+`curl -X POST 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"data": {"bets": [{"amount": 1.5,"type": "straight"}, {"amount": 2,"type": "split"}]}}'`
 
 Sample response data:
 
@@ -121,7 +121,7 @@ order by total winning amount.
 If more than one user has the same total winning amount, they should be ordered alphabetically based on their username.
 
 The sample request:  
-`curl -X GET 'http://YOUR.SERVER.HERE/top/{num_of_top_users}' -H 'Content-Type: application/json'`
+`curl -X GET 'http://YOUR.SERVER.HERE/top/2' -H 'Content-Type: application/json'`
 
 Sample response data:
 
@@ -137,8 +137,7 @@ Sample response data:
         "id":7,
         "total_winning_amount": 120,
         "username": "npmint"
-      },
-      ...
+      }
     ]
   }
 }
@@ -171,10 +170,13 @@ The above mentioned services have to be written in PHP ^7.2, and it is advisable
   ```bash
   composer install
   ```
+
 - Make PHPUnit classes available in the project.
+
   ```bash
   ./bin/phpunit
   ```
+
 - Add a new virtual host in the main Apache configuration file.
 
   ```conf
@@ -200,15 +202,15 @@ The above mentioned services have to be written in PHP ^7.2, and it is advisable
 
   **Note:**
 
-  1. Replace {SERVER_NAME} placeholder with your server's domain name (e.g localhost or a name of your choice).   
+  1. Replace {SERVER_NAME} placeholder with your server's domain name (e.g localhost or a name of your choice).
   2. Replace {APACHE_WEB_ROOT_DIR} with the Apache document root directory.
 
 ### Quick start with Symfony framework ###
 
-- https://symfony.com/doc/current/routing.html#creating-routes-as-attributes-or-annotations
-- https://symfony.com/doc/current/routing.html#route-parameters
-- https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data
-- https://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response
+- [creating-routes-as-attributes-or-annotations](https://symfony.com/doc/current/routing.html#creating-routes-as-attributes-or-annotations)
+- [route-parameters](https://symfony.com/doc/current/routing.html#route-parameters)
+- [accessing-request-data](https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data)
+- [creating-a-json-response](https://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response)
 
 ## Contact ##
 
