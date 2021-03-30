@@ -171,7 +171,10 @@ The above mentioned services have to be written in PHP ^7.2, and it is advisable
   ```bash
   composer install
   ```
-
+- Make PHPUnit classes available in the project.
+  ```bash
+  ./bin/phpunit
+  ```
 - Add a new virtual host in the main Apache configuration file.
 
   ```conf
