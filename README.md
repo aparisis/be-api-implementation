@@ -130,6 +130,10 @@ Sample response data:
       "id":7,
       "total_winning_amount": 120,
       "username": "npmint"
+    }, {
+      "id":18,
+      "total_winning_amount": 328,
+      "username": "testuser"
     }
   ]
 }
