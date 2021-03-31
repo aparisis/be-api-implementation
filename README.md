@@ -93,7 +93,7 @@ Update the user username or password.
 The server will respond with the updated user info.
 
 The sample request:  
-`curl -X PATCH 'http://YOUR.SERVER.HERE/ticket' -H 'Content-Type: application/json' -d '{"user": {"username":"testuser", "password":"xGfdsek20g"}}'`
+`curl -X PATCH 'http://YOUR.SERVER.HERE/user/10' -H 'Content-Type: application/json' -d '{"user": {"username":"testuser", "password":"xGfdsek20g"}}'`
 
 Sample response data:
 
@@ -109,13 +109,13 @@ Sample response data:
 
 ### Task 4 ###
 
-Get the list of the top N (<=3) users that have won the largest winning amount in total from the game.  
+Get the list of the top N (N = 3) users that have won the largest winning amount in total from the game.  
 The list should include the username of users, userId and the total winning amount for each one, sorted in descending
 order by total winning amount.  
 If more than one user has the same total winning amount, they should be ordered alphabetically based on their username.
 
 The sample request:  
-`curl -X GET 'http://YOUR.SERVER.HERE/top/2' -H 'Content-Type: application/json'`
+`curl -X GET 'http://YOUR.SERVER.HERE/top' -H 'Content-Type: application/json'`
 
 Sample response data:
 
