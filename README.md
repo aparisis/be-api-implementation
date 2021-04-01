@@ -37,18 +37,18 @@ Sample response data:
 {
   "ticket": {
     "id": 10,
-    "winning_amount": 100,
+    "winning_amount": 10000,
     "created_at": "2020-10-14 10:31:13",
     "bets": [
       {
-        "id": 14,
-        "amount": 1.5,
+        "id": 19,
+        "amount": 2000,
         "type": "straight" 
       },
       {
-        "id": 15,
-        "amount": 2,
-        "type": "split" 
+        "id": 21,
+        "amount": 1500,
+        "type": "black" 
       }
     ]
   }
@@ -68,17 +68,17 @@ Sample response data:
 ```json
 {
   "ticket": {
-    "id": 10,
+    "id": 17,
     "winning_amount": 0,
     "created_at": "2020-10-14 10:31:13",
     "bets": [
       {
-        "id": 14,
+        "id": 29,
         "amount": 1.5,
         "type": "straight" 
       },
       {
-        "id": 15,
+        "id": 30,
         "amount": 2,
         "type": "split" 
       }
@@ -123,17 +123,17 @@ Sample response data:
 {
   "top":[
     {
-      "id":10,
-      "total_winning_amount": 250,
+      "id":2,
+      "total_winning_amount": 305000,
+      "username": "luckyhope"
+    }, {
+      "id":1,
+      "total_winning_amount": 72500,
+      "username": "kenoman"
+    }, {
+      "id":5,
+      "total_winning_amount": 50000,
       "username": "zafko"
-    }, {
-      "id":7,
-      "total_winning_amount": 120,
-      "username": "npmint"
-    }, {
-      "id":18,
-      "total_winning_amount": 328,
-      "username": "testuser"
     }
   ]
 }
@@ -207,6 +207,7 @@ The above mentioned services have to be written in PHP ^7.2, and it is advisable
 - [route-parameters](https://symfony.com/doc/current/routing.html#route-parameters)
 - [accessing-request-data](https://symfony.com/doc/current/components/http_foundation.html#accessing-request-data)
 - [creating-a-json-response](https://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response)
+- [unit-testing](https://symfony.com/index.php/doc/current/testing.html)
 
 ## Contact ##
 
