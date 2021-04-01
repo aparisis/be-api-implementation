@@ -7,7 +7,7 @@ on a RESTful API specification.
 
 ### Key features ###
 
-- Organize your code being caution about re-usability and readability principles.
+- Organize your code being cautious of re-usability and readability principles.
 - Consider changes in given code or database schema to promote scalability and improve performance.
 - Build a meaningful for the client error handling mechanism.
 - Test your code to avoid preliminary failures.
