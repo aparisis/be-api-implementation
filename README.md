@@ -211,9 +211,7 @@ The above mentioned services have to be written in PHP ^7.2, and it is advisable
 
 ## Contact ##
 
-For general questions, send an email at vaggalanis@jokersattractions.com
-
-For more immediate feedback, contact us at Skype profile `live:vaggalanis`
+For general questions, send an email at aparisis@jokersattractions.com
 
 ## Submission ##
 
